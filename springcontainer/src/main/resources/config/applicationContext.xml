@@ -29,4 +29,32 @@
 		<property name="no" value="2" />
 		<property name="name" value="맹구" />
 	</bean>
+	
+	<!-- Dependency Injection -->
+	<bean id="friend" class="springcontainer.Friend">
+		<constructor-arg value="철수" />
+	</bean>
+	
+	<bean id="user6" class="springcontainer.User">
+		<property name="no" value="3" />
+		<property name="name" value="유리" />
+		<!-- 참조 객체를 주입할 때는 ref -->
+		<property name="friend" ref="friend" />
+	</bean>
+	
+	<!-- 집합 객체의 주입: list, set, map -->
+	<bean id="user7" class="springcontainer.User">
+		<property name="no" value="4" />
+		<property name="name" value="짱구" />
+		<property name="friend" ref="friend" />
+		<!-- 집합 객체(list) -->
+		<property name="friends">
+			<list>
+				<value>철수</value>
+				<value>유리</value>
+				<value>맹구</value>
+			</list>
+		</property>
+	</bean>
+	
 </beans>

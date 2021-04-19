@@ -46,6 +46,15 @@ public class SpringContainerApp {
 		User user5 = (User)ac.getBean("user5");
 		System.out.println("User5:" + user5);
 		
+		//	의존성이 주입된 빈 얻어오기
+		Friend friend = (Friend)ac.getBean("friend");
+		System.out.println("Friend:" + friend);
+		User user6 = (User)ac.getBean("user6");
+		System.out.println("User6:" + user6);
+		
+		//	집합 객체가 주입된 빈 얻어오기
+		User user7 = (User)ac.getBean("user7");
+		System.out.println("User7:" + user7);
 	}
 	
 	private static void testBeanFactory() {
